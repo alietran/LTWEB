@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm sản phẩm mới</title>
+</head>
+
+<body>
+    <h1>Thêm sản phẩm mới</h1>
+    <p>Vui lòng điền đầy đủ thông tin để thêm sản phẩm mới</p>
+    <form action="themsp.php" method="POST" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td>Tên sản phẩm</td>
+                <td><input type="text" name="tensp"></td>
+            </tr>
+            <tr>
+                <td>Chi tiết sản phẩm</td>
+                <td><input type="text" name="chitietsp" style="height: 100px; width: 250px;"></td>
+            </tr>
+            <tr>
+                <td>Giá sản phẩm</td>
+                <td><input type="text" name="giasp">(VND)</td>
+            </tr>
+            <tr>
+                <td>Hình sản phẩm</td>
+                <td><input type="file" name="hinhanhsp"></td>
+            </tr>
+            <tr>
+
+                <td colspan="2" style="text-align:center;">
+                    <input type="submit" value="Lưu sản phẩm">
+                    <input type="reset" value="Làm lại">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    
+    </div>
+   
+    
+   
+</body>
+
+</html>

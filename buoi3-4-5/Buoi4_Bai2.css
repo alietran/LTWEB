@@ -1,0 +1,21 @@
+#wrap{
+	margin: 0 auto;
+	width: 700px;
+	background-color: wheat;
+    padding: 5px 20px;
+}
+
+h1, #button, #footer, #title{
+	display: flex;
+	justify-content: center;
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+	border: solid gray;
+	padding: 10px 10px;}
+#imgSel{
+	display: block;
+	margin: 10px auto;
+}

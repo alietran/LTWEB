@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        input {
+            outline: none;
+        }
+
+        h3 {
+            color: red;
+            padding-left: 150px;
+        }
+
+        .form-content {
+            padding-left: 13px;
+        }
+
+        table {
+            border: 1px solid black;
+            padding: 10px;
+            height: 350px;
+            width: 450px;
+            background-color: bisque;
+            margin-left: 10px;
+        }
+
+        table tr td {
+            padding: 5px;
+        }
+
+        .formdk {
+            margin: 10px 550px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>Họ Tên: Trần Thị Ngọc Diệp<br />
+        MSSV: B1809220</p>
+    <div class="formdk">
+        <h3>Đăng ký tài khoản mới</h3>
+        <p class="form-content">Vui lòng điền đầy đủ thông tin bên dưới để đăng ký tài khoản mới</p>
+        <form name="submit" action="dangky.php" method="POST" enctype="multipart/form-data"
+            onsubmit="return Validate()">
+            <table>
+                <tbody>
+                    <tr>
+                        <td style="width: 200px"><label>Tên đăng nhập</label></td>
+                        <td><input type="text" name="tendangnhap" id="tendangnhap" onchange="test(this.value)"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td id="errorusername" style="color: red; visibility: visible;"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Mật khẩu</label></td>
+                        <td><input type="password" name="matkhau" id="matkhau"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td id="errorpass" style="color: red; visibility: hidden;">!</td>
+                    </tr>
+                    <tr>
+                        <td><label>Gõ lại mật khẩu</label></td>
+                        <td><input type="password" name="nhaplai" id="matkhau1"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td id="errorpass1" style="color: red; visibility: hidden;">!</td>
+                    </tr>
+                    <tr>
+                        <td><label>Hình đại diện</label></td>
+                        <td> <input type="file" name="hinhdaidien" id="hinhanh"></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td id="errorfile" style="color: red; visibility: hidden;">!</td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Giới tính </label></td>
+                        <td>
+                            <input type="radio" name="gioitinh" value="Nam" id="gioitinh1">Nam
+                            <input type="radio" name="gioitinh" value="Nữ" id="gioitinh2">Nữ
+                            <input type="radio" name="gioitinh" value="Khác" id="gioitinh3">Khác
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td id="errorgioitinh" style="color: red; visibility: hidden;">!</td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Nghề nghiệp</label></td>
+                        <td>
+                            <select name="nghenghiep">
+                                <option value="Học sinh">Học sinh</option>
+                                <option value="Sinh viên">Sinh viên</option>
+                                <option value="Giáo viên">Giáo viên</option>
+                                <option value="Khác">Khác</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Sở thích</label></td>
+                        <td>
+                            <input type="checkbox" name="sothich[]" value="Thể thao" id="sothich1">Thể thao
+                            <input type="checkbox" name="sothich[]" value="Du lịch" id="sothich2">Du lịch
+                            <input type="checkbox" name="sothich[]" value="Âm nhạc" id="sothich3">Âm nhạc
+                            <input type="checkbox" name="sothich[]" value="Thời trang" id="sothich4">Thời trang
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td id="errorsothich" style="color: red; visibility: hidden;">!</td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="submit" type="submit">Đăng ký</button>
+                            <button id="reset" type="reset">Làm lại</button>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <script>
+        var ok;
+        function Validate() {
+            var check = true;
+            var tendn = document.getElementById("tendangnhap").value;
+            var pass = document.getElementById("matkhau").value;
+            var pass1 = document.getElementById("matkhau1").value;
+            var hinhanh1 = document.getElementById("hinhanh").value;
+            var gioitinh1 = document.forms["submit"]["gioitinh"].value;
+
+
+            var testTDN = /^[A-Za-z][A-Za-z0-9]{5,14}$/;
+            var testpass = /^[A-Za-z0-9]{6,15}$/;
+            if (tendn == '' & pass == '' & pass1 == '') {
+                alert("Bạn chưa nhập thông tin nào cả");
+                check = false;
+            }
+            if (tendn == '') {
+                document.getElementById("errorusername").innerHTML = "Bạn chưa nhập tên đăng nhập";
+                document.getElementById("errorusername").style.visibility = "visible";
+                check = false;
+            }
+            else {
+                if (!testTDN.test(tendn)) {
+                    document.getElementById("errorusername").innerHTML = "Tên đăng nhập bắt đầu phải là chữ cái, theo sau có thể là chữ cái hoặc là số; dài từ 6 đến 15 ký tự.";
+                    document.getElementById("errorusername").style.visibility = "visible";
+                    check = false;
+                } else if (ok == false) {
+                    document.getElementById("errorusername").innerHTML = "Tên đăng nhập đã tồn tại";
+                    // document.getElementById("errorusername").style.visibility = "hidden";
+                    check = false;
+                }
+                else {
+                    document.getElementById("errorusername").innerHTML = "";
+                }
+
+            }
+
+
+            if (pass == '') {
+                document.getElementById("errorpass").innerHTML = "Bạn chưa nhập mật khẩu";
+                document.getElementById("errorpass").style.visibility = "visible";
+                check = false;
+            }
+            else {
+
+                if (!testpass.test(pass)) {
+                    document.getElementById("errorpass").innerHTML = "Mật khẩu phải có cả chữ cái và số; không được có ký tự khác ngoài chữ cái và số; dài từ 6 đến 15 ký tự";
+                    document.getElementById("errorpass").style.visibility = "visible";
+                    check = false;
+                } else {
+                    document.getElementById("errorpass").innerHTML = "";
+                    // document.getElementById("errorpass").style.visibility = "hidden";
+                    if (pass.search(/[A-Za-z]/) == -1 || pass.search(/\d/) == -1) {
+                        document.getElementById("errorpass").innerHTML = ("Mật khẩu phải có chữ và số");
+                        document.getElementById("errorpass").style.visibility = "visible";
+                        check = false;
+                    }
+                }
+            }
+
+            if (pass1 == '') {
+                document.getElementById("errorpass1").innerHTML = "Bạn chưa nhập lại mật khẩu";
+                document.getElementById("errorpass1").style.visibility = "visible";
+                check = false;
+            }
+            else {
+
+                if (pass1 != pass) {
+                    document.getElementById("errorpass1").innerHTML = "Mật khẩu không trùng khớp";
+                    // document.getElementById("errorpass1").style.display = "block";
+                    check = false;
+                } else {
+                    document.getElementById("errorpass1").innerHTML = "";
+                    // document.getElementById("errorpass1").style.display = "none";
+                }
+            }
+            return check;
+
+            // var st1 = document.getElementById("sothich1").checked;
+            // var st2 = document.getElementById("sothich2").checked;
+            // var st3 = document.getElementById("sothich3").checked;
+            // var st4 = document.getElementById("sothich4").checked;
+
+
+            // if (st1 == false && st2 == false && st3 == false && st4 == false) {
+            //     document.getElementById("errorsothich").innerHTML = "Chưa chọn sở thích";
+            //     document.getElementById("errorsothich").style.visibility = "visible";
+            //     check = false;
+            // }
+            // else {
+            //     document.getElementById("errorsothich").innerHTML = "";
+            // }
+
+
+            // if (hinhanh1 == '') {
+            //     document.getElementById("errorfile").innerHTML = "Chưa có hình đại diện";
+            //     document.getElementById("errorfile").style.visibility = "visible";
+            //     check = false;
+            // } else {
+            //     document.getElementById("errorfile").innerHTML = "";
+            // }
+
+            // // var gt1 = document.getElementById("gioitinh1").value;
+            // // var gt2 = document.getElementById("gioitinh2").value;
+            // // var gt3 = document.getElementById("gioitinh3").value;
+
+
+            // if (gioitinh1==  '') {
+            //     document.getElementById("errorgioitinh").innerHTML = "Chưa chọn giới tính";
+            //     document.getElementById("errorgioitinh").style.visibility = "visible";
+            //     check = false;
+            // }
+            // else {
+            //     document.getElementById("errorgioitinh").innerHTML = "";
+            // }
+
+        }
+
+        function test(str) {
+            var xmlhttp;
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("errorusername").innerHTML = this.responseText;
+                    if (this.responseText == "Tên đăng nhập đã tồn tại") {
+                        ok = false;
+                    }
+                }
+                else {
+                    ok = true;
+                }
+            }
+            xmlhttp.open("GET", "check_username.php?tdn=" + str, true);
+            xmlhttp.send();
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

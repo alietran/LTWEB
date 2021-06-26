@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+   
+    
+    <style>
+        input{
+            outline: none;
+        }
+        h3 {
+            color: red;
+            padding-left: 80px;
+        }
+       
+        table {
+            border: 1px solid black;
+            padding: 10px;
+            height: 350px;
+            width: 450px;
+            background-color: bisque;
+
+        }
+    </style>
+</head>
+
+<body>
+ 
+    <p>Họ Tên: Trần Thị Ngọc Diệp<br />
+        MSSV: B1809220</p>
+    <div class="formdk">
+        <h3>Đăng ký tài khoản mới</h3>
+        <p>Vui lòng điền đầy đủ thông tin bên dưới để đăng ký tài khoản mới</p>
+        <form action="dangky.php" method="POST" enctype="multipart/form-data">
+            <table>
+                <tbody>
+                    <tr>
+                        <td style="width: 200px"><label>Tên đăng nhập</label></td>
+                        <td><input type="text" name="tendangnhap"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Mật khẩu</label></td>
+                        <td><input type="password" name="matkhau"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Gõ lại mật khẩu</label></td>
+                        <td><input type="password" name="nhaplai"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Hình đại diện</label></td>
+                        <td> <input type="file" name="hinhdaidien" id="hinhanh"></td>
+                       
+                    </tr>
+                    <tr>
+                        <td><label>Giới tính </label></td>
+                        <td>
+                            <input type="radio" name="gioitinh" value="Nam">Nam
+                            <input type="radio" name="gioitinh" value="Nữ">Nữ
+                            <input type="radio" name="gioitinh" value="Khác">Khác
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Nghề nghiệp</label></td>
+                        <td>
+                            <select  name="nghenghiep" required>
+                                <option  value="Học sinh">Học sinh</option>
+                                <option  value="Sinh viên">Sinh viên</option>
+                                <option  value="Giáo viên">Giáo viên</option>
+                                <option  value="Khác">Khác</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Sở thích</label></td>
+                        <td>
+                            <input type="checkbox" name="sothich[]" value="Thể thao">Thể thao
+                            <input type="checkbox" name="sothich[]" value="Du lịch">Du lịch
+                            <input type="checkbox" name="sothich[]" value="Âm nhạc">Âm nhạc
+                            <input type="checkbox" name="sothich[]" value="Thời trang">Thời trang
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="submit" type="submit">Đăng ký</button>
+                            <button id="reset" type="reset">Làm lại</button>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

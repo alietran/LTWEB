@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: gray;
+}
+#wrap{
+   width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 15px;
+}
+#title{
+    background-image: url(../img/header.jpg);
+    background-size: cover;
+    height: 25rem;
+    width: 100%;
+   
+}
+#title h1{
+    font-size: 3rem;
+    color: white;
+    padding: 2rem;
+    text-shadow:  2px 2px 2px yellow
+}
+
+#menu{
+    float: left;
+    margin-top: 20px;
+  
+}
+
+
+#menu h4{
+    background-color: hsla(239, 84%, 52%, 0.932);
+    color: white;
+    padding: 10px;
+    width: 10rem;
+    text-align: center;
+    width: 13rem;
+   
+}
+
+
+#menu  ul li {
+    position: relative;
+     list-style: none;
+     display: block;
+     background-color:lightblue;   
+     padding: 2px;
+     height: 2rem;
+    
+}
+
+#menu li a{
+    left: 5px ; 
+    top:0;
+    border-bottom: 2px solid white;
+    text-decoration:  none;
+   padding: 5px;
+    display: block;
+   font-weight: bold;
+   width: 90%;
+  
+   position: absolute;
+}
+#menu li a:hover{
+    background-color: pink;
+}
+
+#content{
+    float: right;
+    
+    margin-top: 12px;
+    margin-bottom: 6px;
+    width: 950px;
+}
+#content h4{
+     color:hsla(239, 84%, 52%, 0.932);
+      font-size: 2rem;
+}
+#content p{
+    padding: 5px;
+   padding-bottom: 1.5rem;
+}
+#footer{
+    border-top: 1px solid gray;
+    clear: both;
+    text-align: center;
+    padding: 1rem;
+}

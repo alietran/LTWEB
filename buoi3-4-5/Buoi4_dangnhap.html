@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: blue;
+        }
+
+        .form_dangnhap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* display: block; */
+            padding: 10px 0;
+            width: 430px;
+            height: 210px;
+            margin: 0 auto;
+            background-color: bisque;
+            border: 1px solid black;
+            font-size: 18px;
+            transform: translateY(10%);
+
+        }
+
+        form {
+            display: block;
+            margin-left: 12px;
+
+        }
+
+        .submit {
+            font-size: 20px;
+            margin-left: 30px;
+            padding: 2px;
+            margin-bottom: 5px;
+        }
+
+        table tr td {
+            padding: 2px 5px;
+
+        }
+
+        .submit:hover {
+            background-color: #74A8DC;
+            color: white;
+            cursor: pointer;
+            border-color: #3380CB;
+            font-size: 20px;
+            border-width: 2px;
+        }
+
+        #dangki {
+
+            margin: 10px;
+            padding-left: 10px;
+            text-align: center;
+        }
+
+        input {
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Đăng nhập</h1>
+    <div class="form_dangnhap">
+
+        <form action="dangnhap.php" method="POST" onsubmit="return ktraRong()">
+            <table>
+                <tr>
+                    <td>Tên đăng nhập </td>
+                    <td><input type="text" name="tendangnhap" id="tendangnhap"> </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="errorusername" style="color: red; visibility: hidden;">Lỗi</td>
+                </tr>
+                <tr>
+                    <td>Mật khẩu</td>
+                    <td><input type="password" name="matkhau" id="matkhau"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="errorpass" style="color: red; visibility: hidden;">Lỗi</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input class="submit" type="submit" value="Đăng nhập" name="dangnhap" id="btnsubmit"> </td>
+                </tr>
+                <tr id="dangki">
+                    <!-- <td style=" border-top-style: solid;
+                    border-top-width: 1px;
+                    border-top-color: grey;">Bạn chưa có tài khoản ? </td>
+                    <td><a style=" color: #0000ff; text-decoration: none;" href="./Buoi4_dangky.html">Đăng ký </a></td> -->
+                    <td colspan="2" style="border-top-style: solid;
+                    border-top-width: 1px;
+                    border-top-color: grey;padding-top: 10px;"> Bạn chưa có tài khoản ? <a style=" color: #0000ff; text-decoration: none;"  href="./Buoi4_dangky.html">Đăng ký </a></td>
+                </tr>
+
+            </table>
+        </form>
+
+    </div>
+    <script>
+        // var checkValidation = function () {
+        //     var valid = true;
+        //     valid = ktraRong("tendangnhap", "errorusername") &
+        //         ktraRong("matkhau", "errorpass");
+
+        //     if (!valid) {
+        //         return false;
+        //     }
+        //     return true;
+        // }
+
+        // var ktraRong = function (idValue, idError) {
+        //     var inputText = document.getElementById(idValue);
+        //     if (inputText.value.trim() === "") {
+        //         document.getElementById(idError).innerHTML = "Vui lòng không để trống! ";
+        //         document.getElementById(idError).style.display= "block";
+
+        //         return false;
+        //     }
+        //     else {
+        //         document.getElementById(idError).innerHTML = "";
+        //         document.getElementById(idError).style.display = "none";
+        //         return true;
+        //     }
+        // }
+        // document.getElementById("btnsubmit").onclick = checkValidation;
+
+
+        function ktraRong() {
+            var check = true;
+            var tendn = document.getElementById("tendangnhap").value;
+            var pass = document.getElementById("matkhau").value;
+            if (tendn == '') {
+                document.getElementById("errorusername").innerHTML = "Vui lòng không để trống!";
+                document.getElementById("errorusername").style.visibility = "visible";
+                check = false;
+            } else {
+
+                document.getElementById("errorusername").style.visibility = "hidden";
+                check = true;
+            }
+
+            if (pass == '') {
+                document.getElementById("errorpass").innerHTML = "Vui lòng không để trống!";
+                document.getElementById("errorpass").style.visibility = "visible";
+                check = false;
+            }
+            else {
+                // document.getElementById("errorpass").innerHTML = "";
+                document.getElementById("errorpass").style.visibility = "hidden";
+                check = true;
+            }
+            return check;
+        }
+
+    </script>
+</body>
+
+</html>

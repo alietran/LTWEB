@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+body{
+    background-color:gray;
+
+}
+    #wrap{
+    height: 40rem;
+    background-color: #3b7565;
+    width: 90%;
+    margin: 0 auto;
+    
+    }
+    #title{
+       
+    width: 95%;
+    margin: 0 auto;
+    background-image: url("banner.jpg");
+    background-size: cover;
+    height: 15rem;
+    
+   
+    }
+
+    #title h1{
+        text-align: center;
+        color: yellow;
+        font-size: 5rem;
+        text-shadow: 2px 1px 2px yellow;
+        line-height: 18rem;
+    }
+    #menu{
+     width: 95%;
+     margin: 0 auto;
+    }
+    .main_menu{
+        position: relative;
+    }
+    .submenu {
+        position: absolute;
+        display: none;
+        /* margin-left: -2px; */
+    }
+    .main_menu li:hover .submenu{
+        display: block;
+    }
+    .main_menu li {
+       
+        float: left;
+        list-style: none;
+        background-color: #222222;
+        /* border: 2px dotted yellow; */
+        text-align: center;
+        width: 328.3px;
+        height: 33px;
+        line-height: 30px;
+
+    }
+    .main_menu li a{
+        text-decoration: none;
+        display: block;
+        border: 2px dotted yellow;
+
+        color: yellow;
+
+    }
+   
+    .submenu li {
+        clear: left;
+        width: 250px;
+        height: 39px;
+        line-height: 36px;
+        display: block;
+        background-color: #222222;
+    }
+    
+
+    .submenu li:hover a{
+        color: black ;
+        background-color: rgb(226, 220, 220); 
+        border: 2px dotted yellow;   
+    }
+    #content{
+        margin-top: 4rem;
+        clear: both;
+        margin-left: 2rem;
+        
+    }
+    #content h4{
+        color: yellow;
+      
+       border-bottom: 2px dotted yellow;
+       display: inline;
+    }
+    #content p {
+        line-height: 1.8rem;
+    }
+    #content ul{
+        margin-left: 2rem;
+    }
+    #content ul a{
+        color: white;
+       
+    }
+    #footer{
+        margin: 1rem;
+        padding: 2rem;
+        text-align: center;
+        border-top: 2px dotted black;
+    }

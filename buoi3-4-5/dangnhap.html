@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <style>
+        .form_dangnhap{
+            display: block;
+            padding: 10px 0;
+            width: 80%;
+            margin: 0 auto;
+            background-color: bisque;
+            text-align: center;
+        }
+        form{
+            display: block;
+            
+            margin-left: 450px;
+        }
+        table tr td{
+            padding: 5px 5px;
+            
+        }
+        .submit{
+            font-size: 20px;
+        }
+        .submit:hover{
+            background-color:  #74A8DC;
+            color: white;
+            cursor: pointer;
+            border-color: #3380CB;
+            font-size: 20px;
+            border-width: 2px;
+                }
+
+        
+    </style>
+   
+</head>
+
+<body>
+    <div class="form_dangnhap">
+        <h1>Đăng nhập</h1>
+        <form action="dangnhap.php" method="POST">
+
+            <table>
+                <tr>
+                    <td>Tên đăng nhập</td>
+                    <td><input type="text" name="tendangnhap"></td>
+                </tr>
+                <tr>
+                    <td>Mật khẩu</td>
+                    <td><input type="password" name="matkhau"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input class="submit" type="submit" value="Đăng nhập" name="dangnhap">
+                </tr>
+                </td>
+            </table>
+        </form>
+    </div>
+  
+</body>
+</html>

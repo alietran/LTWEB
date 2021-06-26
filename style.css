@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+html{
+    letter-spacing: 3px;
+    font-size: 16px;
+   
+}
+body{
+    font-family: 'Trirong', serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* HEADER */
+
+    header{
+        margin: 0 auto;
+        width: 80%;
+        /* height: 18rem; */
+        margin-bottom: 0;
+        height: 20rem;
+    position: relative;
+        
+    }
+/* Menu */
+.menu{
+    
+    width: 80%;
+    margin: 0 10%;
+   
+    z-index: 100;
+}
+.main__menu{
+    display: flex;
+   justify-content: space-around;
+    text-align: center;
+
+    
+}
+.main__menu li{
+    list-style: none;
+    width: 100%;
+    background-color: #3380CB;
+    padding: 7px 0;
+   
+}
+
+.main__menu li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+}
+.main-menu-content{
+    position: relative;
+}
+.main-menu-content:hover .sub-menu{
+    display: block;
+}
+.sub-menu{
+    position: absolute;
+    
+    list-style: none;
+    width: 100%;
+    display: none;
+    margin-top: 7px;
+}
+.sub-menu li:hover{
+    background-color: #74A8DC;
+}
+
+.sub-menu li a{
+    text-decoration: none;
+    color: #fff;
+}
+/* info */
+.info{
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    
+}
+table{
+    background-color: #74A8DC;
+    border: 1px solid #fff;
+    height: 20rem;
+    width: 32rem;
+}
+table img{
+
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    border-radius: 5px;
+}
+/* Content */
+.table__of__content{
+    margin: 0 auto;
+    width: 80%;
+    
+}
+
+.table__of__content h1{
+    text-align: center;
+    margin-top:  1.5rem;
+    font-size: 2rem;
+}
+.table__of__content--list{
+    margin: 1rem 0;
+}
+.table__of__content--list li{
+    margin: 0 1.5rem;
+    
+}
+.table__of__content--list li a{
+    text-decoration: none;
+}
+.table__of__content--list li a:hover{
+    color: #2886e4;
+}
+.content{
+    margin: 0 auto;
+    width: 80%;
+
+}
+.content p{
+    line-height: 2.2rem;
+    padding: 0.8rem 0;
+}
+/* Back-to-top */
+.backToTop{
+    position: fixed;
+    right: 3rem;
+    bottom: 4rem;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .cd-top--is-visible { 
+    visibility: visible;
+    opacity: 1;
+  }
+  .cd-top--fade-out {
+    opacity: .5;
+  }
